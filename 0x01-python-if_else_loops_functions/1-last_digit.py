@@ -6,9 +6,9 @@ if number >= 0:
 elif number < 0:
     lastDigit = - (abs(number) % 10)
 print(f"Last digit of {number:d} is {lastDigit:d} ", end="")
-if abs(lastDigit) > 5:
+if lastDigit > 5:
     print(f"and is greater than 5")
-elif abs(lastDigit) == 0:
-    print(f"and is zero")
-elif abs(lastDigit) < 6 and lastDigit != 0:
+elif lastDigit == 0:
+    print(f"and is 0")
+elif lastDigit < 6 and lastDigit != 0:
     print(f"and is less than 6 and not 0")
