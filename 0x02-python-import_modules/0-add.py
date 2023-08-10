@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+# Make the code not executed when imported by using __import__
 if __name__ == "__main__":
     from add_0 import add
     a = 1
