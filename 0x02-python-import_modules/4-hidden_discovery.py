@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import hidden_4
 
+
 def print_names():
     names = dir(hidden_4)
     for name in names:
