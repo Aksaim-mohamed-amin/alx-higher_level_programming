@@ -1,5 +1,5 @@
 
-# # 0x04. Python - More Data Structures: Set, Dictionary
+# 0x04. Python - More Data Structures: Set, Dictionary
 
 Welcome to the "0x04. Python - More Data Structures: Set, Dictionary" repository! In this module, we will explore two powerful and versatile data structures in Python: sets and dictionaries. These data structures play a crucial role in handling collections of data and mapping relationships between elements.
 
