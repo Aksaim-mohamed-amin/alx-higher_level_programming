@@ -34,10 +34,12 @@ class Rectangle:
     # width Getter and Setter
     @property
     def width(self):
+        """ Retrive the width of rectangle """
         return (self.__size)
 
     @width.setter
     def width(self, value):
+        """ Set the width of the rectangle """
         if isinstance(value, int):
             if value < 0:
                 raise ValueError("width must be >= 0")
@@ -48,10 +50,12 @@ class Rectangle:
     # height Getter and Setter
     @property
     def height(self):
+        """ Retrive the height of rectangle """
         return (self.__height)
 
     @height.setter
     def height(self, value):
+        """ Set the hieght of the rectangle """
         if isinstance(value, int):
             if value < 0:
                 raise ValueError("height must be >= 0")
