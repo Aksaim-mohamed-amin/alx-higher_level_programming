@@ -1,0 +1,101 @@
+# 2-matrix_divided.txt
+
+===========================
+How to Use 2-matrix_divided.py
+===========================
+
+This modul contain one function ``matrix_devided(a, b=98)`` that devided all the numbers of a matrix.
+
+Usage
+=====
+
+Syntaxs: `matrix_devided(matrix, div)`
+- `matrix`: Matrix to devide
+- `div`: Number to devide by
+- Return: now matrix
+
+::
+        >>> matrix_devided = __import__('2-matrix_divided').matrix_divided
+
+The function returns the new matrix after deviding all the elements negative and float numbers are accepted, the result will be rounded to a two decimal number
+::
+	>>> m1 = [[2, -4, 6], [5, -7, 12.44], [14, 0, 18]]
+        >>> matrix_devided(m1, 2)
+	[[1.0, -2.0, 3.0], [2.5, -3.5, 6.22], [7.0, 0.0, 9.0]]
+
+The original matrix will not be changed a new matrix will be returned
+::
+	>>> m1 = [[2, -4, 6], [14, 0, 18]]
+        >>> matrix_devided(m1, 2)
+	[[1.0, -2.0, 3.0], [7.0, 0.0, 9.0]]
+	>>> print(m1)
+	[[2, -4, 6], [14, 0, 18]]
+
+Invalid Divisor
+===============
+
+The value of `div` must be a number or it will raise a TypeError
+::
+	>>> m1 = [[2, -4, 6], [5, -7, 12.44], [14, 0, 18]]
+        >>> matrix_devided(m1, "test")
+        Traceback (most recent call last):
+        TypeError: div must be a number
+
+::
+	>>> m1 = [[2, -4, 6], [5, -7, 12.44], [14, 0, 18]]
+        >>> matrix_devided(m1, None)
+        Traceback (most recent call last):
+        TypeError: div must be a number
+
+The value of `div` should be diffrent than 0 or it will raise a ZeroDivisionError
+::
+	>>> m1 = [[2, -4, 6], [5, -7, 12.44], [14, 0, 18]]
+        >>> matrix_devided(m1, 0)
+        Traceback (most recent call last):
+	ZeroDivisionError: division by zero
+
+Invalid Matrix
+==============
+
+The function expect the matrix to be a (list of lists), and all it elements must be of type integer or float,
+If that is not respected will raise a TypeError.
+
+Note that an empty list will raise a TypeError
+::
+	>>> m1 = []
+        >>> matrix_devided(m1, 2)
+        Traceback (most recent call last):
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+But an empty matrix will pass
+::
+	>>> m1 = [[]]
+        >>> matrix_devided(m1, 2)
+	[[]]
+
+::
+	>>> m1 = [2, 5, 9]
+        >>> matrix_devided(m1, 2)
+        Traceback (most recent call last):
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+	>>> m1 = [[2, -4, 6], ['a', 5, 6], ["hello", 8, 9]]
+        >>> matrix_devided(m1, 2)
+        Traceback (most recent call last):
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+::
+	>>> m1 = [[2, -4, None], [7, 5, 6], [10, 8, 9]]
+        >>> matrix_devided(m1, 2)
+        Traceback (most recent call last):
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+The function expect all the row of the matrix to be the same size if that is not true
+it will raise a TypeError
+::
+	>>> m1 = [[2, -4, 6], [1, 2, 6, 8], [4, 8]]
+        >>> matrix_devided(m1, 2)
+        Traceback (most recent call last):
+        TypeError: Each row of the matrix must have the same size
