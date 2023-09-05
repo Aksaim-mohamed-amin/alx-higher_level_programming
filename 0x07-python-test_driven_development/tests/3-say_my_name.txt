@@ -9,92 +9,54 @@ This modul contain one function `say_my_name(first_name, last_name)`` that print
 Usage
 =====
 
-Syntaxs: `matrix_devided(fisrt_name, last_name)`
+Syntaxs: `say_my_name(fisrt_name, last_name)`
 - `first_name`: fisrt name
 - `last_name`: last name
 
 ::
-        >>>  = __import__('3-say_my_name').say_my_name
+        >>> say_my_name = __import__('3-say_my_name').say_my_name
 
-The function returns the new matrix after deviding all the elements negative and float numbers are accepted, the result will be rounded to a two decimal number
+The function print the string "My name is " followed with full name
 ::
-	>>> m1 = [[2, -4, 6], [5, -7, 12.44], [14, 0, 18]]
-        >>> matrix_devided(m1, 2)
-	[[1.0, -2.0, 3.0], [2.5, -3.5, 6.22], [7.0, 0.0, 9.0]]
+	>>> say_my_name("Amine", "Aks")
+	My name is Amine Aks
 
-The original matrix will not be changed a new matrix will be returned
+The last name is optionall
 ::
-	>>> m1 = [[2, -4, 6], [14, 0, 18]]
-        >>> matrix_devided(m1, 2)
-	[[1.0, -2.0, 3.0], [7.0, 0.0, 9.0]]
-	>>> print(m1)
-	[[2, -4, 6], [14, 0, 18]]
+	>>> say_my_name("Amine")
+	My name is Amine 
 
-Invalid Divisor
-===============
-
-The value of `div` must be a number or it will raise a TypeError
-::
-	>>> m1 = [[2, -4, 6], [5, -7, 12.44], [14, 0, 18]]
-        >>> matrix_devided(m1, "test")
-        Traceback (most recent call last):
-        TypeError: div must be a number
-
-::
-	>>> m1 = [[2, -4, 6], [5, -7, 12.44], [14, 0, 18]]
-        >>> matrix_devided(m1, None)
-        Traceback (most recent call last):
-        TypeError: div must be a number
-
-The value of `div` should be diffrent than 0 or it will raise a ZeroDivisionError
-::
-	>>> m1 = [[2, -4, 6], [5, -7, 12.44], [14, 0, 18]]
-        >>> matrix_devided(m1, 0)
-        Traceback (most recent call last):
-	ZeroDivisionError: division by zero
-
-Invalid Matrix
+Invalid Input
 ==============
 
-The function expect the matrix to be a (list of lists), and all it elements must be of type integer or float,
-If that is not respected will raise a TypeError.
-
-Note that an empty list will raise a TypeError
+The function expect Both the first and last name to be a string, otherwise it will raise a TypeError.
 ::
-	>>> m1 = []
-        >>> matrix_devided(m1, 2)
-        Traceback (most recent call last):
-        TypeError: matrix must be a matrix (list of lists) of integers/floats
-
-But an empty matrix will pass
-::
-	>>> m1 = [[]]
-        >>> matrix_devided(m1, 2)
-	[[]]
+	>>> say_my_name("Amine", 98)
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
 
 ::
-	>>> m1 = [2, 5, 9]
-        >>> matrix_devided(m1, 2)
-        Traceback (most recent call last):
-        TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> say_my_name(98, "Amal")
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
 
 ::
-	>>> m1 = [[2, -4, 6], ['a', 5, 6], ["hello", 8, 9]]
-        >>> matrix_devided(m1, 2)
-        Traceback (most recent call last):
-        TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> say_my_name("LeBron", ["Cavs", "Lakers", "Heat"])
+	Traceback (most recent call last):
+	TypeError: last_name must be a string
 
 ::
-	>>> m1 = [[2, -4, None], [7, 5, 6], [10, 8, 9]]
-        >>> matrix_devided(m1, 2)
-        Traceback (most recent call last):
-        TypeError: matrix must be a matrix (list of lists) of integers/floats
+	>>> say_my_name({"LeBron": 6, "James": 23}, 7.7)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
 
-
-The function expect all the row of the matrix to be the same size if that is not true
-it will raise a TypeError
 ::
-	>>> m1 = [[2, -4, 6], [1, 2, 6, 8], [4, 8]]
-        >>> matrix_devided(m1, 2)
-        Traceback (most recent call last):
-        TypeError: Each row of the matrix must have the same size
+	>>> say_my_name(None)
+	Traceback (most recent call last):
+	TypeError: first_name must be a string
+
+At least one name must be provided.
+::
+	>>> say_my_name()
+	Traceback (most recent call last):
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
