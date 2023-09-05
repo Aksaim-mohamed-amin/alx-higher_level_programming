@@ -1,5 +1,13 @@
 #!/usr/bin/python3
 def matrix_divided(matrix, div):
+    """ Divide all element of a matrix by a number
+
+    Args:
+      matrix (matrix): The matrix to devide.
+      div (int): Divider to divid by.
+
+    Return: new matrix.
+    """
     if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
     if div == 0:
