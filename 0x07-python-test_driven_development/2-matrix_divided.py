@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Define a function that devide a matrix. """
 
+
 def matrix_divided(matrix, div):
     """ Divide all element of a matrix by a number
 
