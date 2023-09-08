@@ -1,4 +1,14 @@
+#!/usr/bin/python3
+""" Matrix multiplication """
+
+
 def matrix_mul(m_a, m_b):
+    """ Multiply two matrices
+
+    Args:
+      m_a (matrix): First matrix.
+      m_b (matrix): Secend matrix.
+    """
     if not isinstance(m_a, list):
         raise TypeError("m_a must be a list")
     if not isinstance(m_b, list):
