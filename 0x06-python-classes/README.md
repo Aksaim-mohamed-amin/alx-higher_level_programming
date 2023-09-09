@@ -1,5 +1,3 @@
-
-
 # 0x06. Python - Classes and Objects
 
 Welcome to the "0x06. Python - Classes and Objects" repository! In this module, we will delve into the fundamental concepts of object-oriented programming (OOP) in Python, specifically focusing on classes and objects. Understanding classes and objects is essential for building structured and reusable code in Python.
@@ -11,6 +9,15 @@ Before starting this module, it is recommended that you have a basic understandi
 ## Project Requirements
 
 ### Python Scripts
+
+-   Allowed editors:  `vi`,  `vim`,  `emacs`
+-   All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.8.5)
+-   All your files should end with a new line
+-   The first line of all your files should be exactly  `#!/usr/bin/python3`
+-   A  `README.md`  file, at the root of the folder of the project, is mandatory
+-   Your code should use the pycodestyle (version  `2.8.*`)
+-   All your files must be executable
+-   The length of your files will be tested using  `wc`
 
 ### General
 
