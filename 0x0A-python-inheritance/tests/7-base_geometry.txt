@@ -1,19 +1,9 @@
-# 7-base_geometry.txt
-
-==============================
- How to use 7-base_geometry.py
+The ``7-base_geometry`` module
 ==============================
 
-This modual contain one class BaseGeometry
+Using ``BaseGeometry``
+----------------------
 
-BaseGeometry Methods
-====================
-def area(self): raises an Exception with the message area() is not implemented.
-def integer_validator(self, name, value): validates value.
-
-
-Usage
-=====
 Importing class from the module:
     >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
 

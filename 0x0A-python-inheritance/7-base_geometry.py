@@ -1,26 +1,25 @@
 #!/usr/bin/python3
-""" BaseGeometry class """
+"""Defines a base geometry class BaseGeometry."""
 
 
 class BaseGeometry:
-    """ Define a BaseGeometry class """
+    """Reprsent base geometry."""
 
     def area(self):
-        """ Raise an exception with the area not emplimented """
+        """Not yet implemented."""
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """ Validate value
+        """Validate a parameter as an integer.
 
         Args:
-          name: The name of the parameter.
-          value: The value to validate.
-
+            name (str): The name of the parameter.
+            value (int): The parameter to validate.
         Raises:
-          TypeErro: if value is ot integer.
-          ValueError: if value is equal or less than 0.
+            TypeError: If value is not an integer.
+            ValueError: If value is <= 0.
         """
-        if not isinstance(value, int):
-            raise TypeError("<name> must be an integer")
-        if value < 1:
-            raise ValueError("<name> must be greater than 0")
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))
