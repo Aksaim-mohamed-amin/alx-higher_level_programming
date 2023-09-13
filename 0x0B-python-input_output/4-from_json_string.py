@@ -2,6 +2,7 @@
 """ Pars a Json data """
 import json
 
+
 def from_json_string(my_str):
     """ Pars data from json string
 
