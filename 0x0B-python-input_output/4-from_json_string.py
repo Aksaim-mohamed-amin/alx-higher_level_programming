@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-# 6-from_json_string.py
-"""Defines a JSON-to-object function."""
+""" Pars a Json data """
 import json
 
-
 def from_json_string(my_str):
-    """Return the Python object representation of a JSON string."""
-    return json.loads(my_str)
+    """ Pars data from json string
+
+    Args:
+      my_str (str): String that contain the data.
+    """
+    return (json.loads(my_str))
