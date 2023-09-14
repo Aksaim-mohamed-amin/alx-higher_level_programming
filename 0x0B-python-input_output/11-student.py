@@ -32,5 +32,6 @@ class Student:
         Args:
           json (dict): Dictionary that contain all the new attrbutes.
         """
+        self.__dict__ = {}
         for key, value in json.items():
             setattr(self. key, value)
