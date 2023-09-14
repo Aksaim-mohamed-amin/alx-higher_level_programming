@@ -22,9 +22,10 @@ class Student:
         Args:
           attrs: list of the attributes to return if None return all.
         """
-        if attrs is None:
-            return (self.__dict__)
-        return {atr: getattr(self, atr) for atr in attrs if hasattr(self, atr)}
+        if (type(attrs) == list and
+            all(type(ele) == str for ele in attrs)):
+            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
+        return self.__dict__
 
     def reload_from_json(self, json):
         """ Replace all the attributes of a student
