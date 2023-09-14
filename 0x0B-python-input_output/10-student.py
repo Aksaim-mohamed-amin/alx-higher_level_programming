@@ -22,6 +22,6 @@ class Student:
         Args:
           attrs: list of the attributes to return if None return all.
         """
-        if attrs == None:
+        if attrs is None:
             return (self.__dict__)
-        return ({attr: getattr(self, attr) for attr in attrs if hasattr(self, attr)})
+        return {atr: getattr(self, atr) for atr in attrs if hasattr(self, atr)}
