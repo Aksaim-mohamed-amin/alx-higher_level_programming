@@ -22,16 +22,16 @@ class Student:
         Args:
           attrs: list of the attributes to return if None return all.
         """
-        if (type(attrs) == list and
-            all(type(ele) == str for ele in attrs)):
-            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
-        return self.__dict__
+        if attrs is None:
+            return (self.__dict__)
+        return {atr: getattr(self, atr) for atr in attrs if hasattr(self, atr)}
 
     def reload_from_json(self, json):
-        """ Replace all the attributes of a student
+        """ Reload a student attributes from a json file.
 
         Args:
-          json (dict): Dictionary that contain all the new attrbutes.
+          json: Json dict.
         """
+        self.__dict__ = {}
         for key, value in json.items():
-            setattr(self. key, value)
+            setattr(self, key, value)
