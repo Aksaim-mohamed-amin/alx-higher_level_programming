@@ -20,6 +20,6 @@ def pascal_triangle(n):
             row.append(prev_row[j - 1] + prev_row[j])
         row.append(1)
 
-    triangle.append(row)
+        triangle.append(row)
 
     return triangle
