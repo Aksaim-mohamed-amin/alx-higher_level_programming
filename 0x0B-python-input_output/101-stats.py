@@ -31,16 +31,19 @@ def get_metrics():
             else:
                 lineCount += 1
 
-            line = line.split()
-            size = int(line[-1])
-            status = line[-2]
+            try:
+                line = line.split()
+                size = int(line[-1])
+                status = line[-2]
 
-            fileSize += size
-            if status in possibleStatus:
-                if status in statusCodes:
-                    statusCodes[status] += 1
-                else:
-                    statusCodes[status] = 1
+                fileSize += size
+                if status in possibleStatus:
+                    if status in statusCodes:
+                        statusCodes[status] += 1
+                    else:
+                        statusCodes[status] = 1
+            except (IndexError, ValueError):
+                pass
 
         if lineCount != 0:
             print_metrics(fileSize, statusCodes)
