@@ -31,7 +31,7 @@ def get_metrics():
             else:
                 lineCount += 1
 
-            line  = line.split()
+            line = line.split()
             size = int(line[-1])
             status = line[-2]
 
@@ -47,7 +47,6 @@ def get_metrics():
 
     except KeyboardInterrupt:
         print_metrics(fileSize, statusCodes)
-
 
 
 if __name__ == "__main__":
