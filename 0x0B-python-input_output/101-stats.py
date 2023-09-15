@@ -42,6 +42,9 @@ def get_metrics():
                 else:
                     statusCodes[status] = 1
 
+        if lineCount != 0:
+            print_metrics(fileSize, statusCodes)
+
     except KeyboardInterrupt:
         print_metrics(fileSize, statusCodes)
 
