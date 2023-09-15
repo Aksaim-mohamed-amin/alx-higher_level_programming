@@ -24,12 +24,7 @@ def get_metrics():
 
     try:
         for line in sys.stdin:
-
-            if lineCount == 10:
-                print_metrics(fileSize, statusCodes)
-                lineCount = 1
-            else:
-                lineCount += 1
+            lineCount += 1
 
             try:
                 line = line.split()
@@ -44,6 +39,10 @@ def get_metrics():
                         statusCodes[status] = 1
             except (IndexError, ValueError):
                 pass
+
+            if lineCount == 10:
+                print_metrics(fileSize, statusCodes)
+                lineCount = 1
 
         if lineCount != 0:
             print_metrics(fileSize, statusCodes)
