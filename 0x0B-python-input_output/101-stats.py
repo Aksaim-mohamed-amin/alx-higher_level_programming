@@ -44,12 +44,11 @@ def get_metrics():
             except (IndexError, ValueError):
                 pass
 
-        if lineCount != 0:
-            print_metrics(fileSize, statusCodes)
+        print_metrics(fileSize, statusCodes)
 
     except KeyboardInterrupt:
         print_metrics(fileSize, statusCodes)
-        raise
+
 
 if __name__ == "__main__":
     get_metrics()
