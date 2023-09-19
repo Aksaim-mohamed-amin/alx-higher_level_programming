@@ -2,6 +2,7 @@
 """ Base Class """
 import json
 
+
 class Base:
     """ define the base class"""
     __nb_objects = 0
@@ -21,12 +22,12 @@ class Base:
     # to_json_string
     @staticmethod
     def to_json_string(list_dictionaries):
-        """ returns the JSON string representation of list_dictionaries.
+        """ returns the JSON serialization of list_dictionaries.
 
         Args:
            list_dictionaries (list of dict): List of dictionary to convert.
         """
         if list_dictionaries is None or list_dictionaries == []:
-            return ([])
+            return ("[]")
 
         return (json.dumps(list_dictionaries))
