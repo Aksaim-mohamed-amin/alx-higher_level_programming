@@ -23,6 +23,7 @@ class Square(Rectangle):
         return ("[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                   self.width))
     # Size setter and getter
+
     @property
     def size(self):
         """ Get the size of the Square """
@@ -68,7 +69,7 @@ class Square(Rectangle):
                 elif k == "y":
                     self.y = v
 
-    #Public methos to_dictionary
+    # Public methos to_dictionary
     def to_dictionary(self):
         """ returns the dictionary representation of a Square """
         return ({

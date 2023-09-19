@@ -151,8 +151,8 @@ class TestRectangle_update_args(unittest.TestCase):
 
     def test_update_args_more_than_five_aruments(self):
         """
-        Test the update methos with more than five arguments, id, width, height,
-        and x, plus other arguments
+        Test the update methos with more than five arguments, id, width,
+        height, and x, plus other arguments
         """
         r1 = Rectangle(10, 10, 10, 10, 10)
         r1.update(9, 5, 2, 3, 1, 54, 66)

@@ -5,6 +5,7 @@
 class Base:
     """ define the base class"""
     __nb_objects = 0
+
     def __init__(self, id=None):
         """ Initialize a new instance of the object Base
 
