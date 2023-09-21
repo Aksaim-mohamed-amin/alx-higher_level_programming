@@ -19,7 +19,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    # to json string method
+    # to json string
     @staticmethod
     def to_json_string(list_dictionaries):
         """ returns the JSON serialization of list_dictionaries.
@@ -48,3 +48,10 @@ class Base:
 
         with open(fileName, mode='w', encoding="utf-8") as jsonFile:
             jsonFile.write(Base.to_json_string(list_dict))
+
+    # from json string
+    def from_json_string(json_string):
+        """ returns the list of the JSON string representation of json_string"""
+        if json_string is None or len(json_string) == 0:
+            return ([])
+        return (json.loads(json_string))
