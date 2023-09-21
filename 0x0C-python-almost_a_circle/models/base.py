@@ -60,7 +60,10 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ returns an instance with all attributes already set """
-        dummy = cls(10, 10)
+        if cls.__name__ == "Rectangle":
+            dummy = cls(10, 10)
+        else:
+            dummy = cls(10)
 
         dummy.update(**dictionary)
 
