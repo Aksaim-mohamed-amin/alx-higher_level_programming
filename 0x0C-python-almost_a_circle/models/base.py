@@ -19,7 +19,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
-    # to_json_string
+    # to json string method
     @staticmethod
     def to_json_string(list_dictionaries):
         """ returns the JSON serialization of list_dictionaries.
@@ -31,3 +31,20 @@ class Base:
             return ("[]")
 
         return (json.dumps(list_dictionaries))
+
+    # save to a file
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """ writes the JSON string representation of list_objs to a file.
+
+        Args:
+          list_objs: list of instances who inherits of Base.
+        """
+        fileName = cls.__name__ + ".json"
+
+        list_dict = []
+        if list_objs is not None:
+            list_dict = [o.to_dictionary() for o in list_objs]
+
+        with open(fileName, mode='w', encoding="utf-8") as jsonFile:
+            jsonFile.write(Base.to_json_string(list_dict))
