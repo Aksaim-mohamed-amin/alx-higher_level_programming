@@ -74,9 +74,10 @@ class Base:
     def load_from_file(cls):
         """ that returns a list of instances """
         fileName = cls.__name__ + ".json"
+        instances_list = []
 
         with open(fileName, mode='r', encoding="utf-8") as jsonFile:
             dict_list = Base.from_json_string(jsonFile.read())
-            return [cls.create(**d) for d in dict_list]
+            instances_list = [cls.create(**d) for d in dict_list]
 
-        return ([])
+        return (instances_list)
