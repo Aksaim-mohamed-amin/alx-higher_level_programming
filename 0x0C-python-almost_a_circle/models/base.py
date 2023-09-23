@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Base Class """
 import json
-
+import csv
 
 class Base:
     """ define the base class"""
@@ -78,6 +78,44 @@ class Base:
         try:
             with open(fileName, mode='r', encoding="utf-8") as jsonFile:
                 dict_list = Base.from_json_string(jsonFile.read())
+                return ([cls.create(**d) for d in dict_list])
+
+        except FileNotFoundError:
+            return ([])
+
+    # save to csv file
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """ Save an instaces to a csv file """
+        fileName = cls.__name__ + ".csv"
+        with open(fileName, mode='w', encoding="utf-8") as csvFile:
+            if list_objs is None or list_objs == []:
+                csvFile.write("[]")
+
+            else:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+                csvWriter = csv.DictWriter(csvFile, fieldnames=fieldnames)
+                for obj in list_objs:
+                    csvWriter.writerow(obj.to_dictionary())
+
+    # from csv file
+    @classmethod
+    def load_from_file_csv(cls):
+        """ Read an instance from a scv file """
+        fileName = cls.__name__ + ".csv"
+        try:
+            with open(fileName, mode='r') as csvFile:
+                if cls.__name__ == "Rectangle":
+                    fieldnames = ["id", "width", "height", "x", "y"]
+                else:
+                    fieldnames = ["id", "size", "x", "y"]
+
+                csvReader = csv.DictReader(csvFile, fieldnames=fieldnames)
+                dict_list = [dict([k, int(v)] for k, v in row.items())
+                             for row in csvReader]
                 return ([cls.create(**d) for d in dict_list])
 
         except FileNotFoundError:
