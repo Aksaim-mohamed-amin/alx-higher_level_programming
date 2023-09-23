@@ -2,6 +2,7 @@
 """ Base Class """
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -121,3 +122,50 @@ class Base:
 
         except FileNotFoundError:
             return ([])
+
+    # Draw instances
+    def draw(list_rectangles, list_squares):
+        """ opens a window and draws all the Rectangles and Squares """
+        turt = turtle.Turtle()
+        turt.screen.bgcolor("#050a10")
+        turt.pensize(5)
+        turt.shape("arrow")
+
+        window_width = turt.screen.window_width()
+        window_height = turt.screen.window_height()
+        x = -window_width / 2 + 10
+        y = 0
+
+        turt.up()
+        turt.showturtle()
+        turt.color("#0B67F5")
+        for rect in list_rectangles:
+            turt.goto(rect.x + x, rect.y + y)
+            turt.down()
+            for _ in range(2):
+                turt.forward(rect.width)
+                turt.right(90)
+                turt.forward(rect.height)
+                turt.right(90)
+            turt.up()
+            x += rect.width
+            y += rect.height
+
+        turt.hideturtle()
+
+        turt.color("#F50B8F")
+        x = 0
+        y = 0
+        for square in list_squares:
+            turt.showturtle()
+            turt.goto(square.x + x, square.y + y)
+            turt.down()
+            for _ in range(4):
+                turt.forward(square.size)
+                turt.right(90)
+            turt.up()
+            x += square.size
+            y += square.size
+        turt.hideturtle()
+
+        turtle.exitonclick()
