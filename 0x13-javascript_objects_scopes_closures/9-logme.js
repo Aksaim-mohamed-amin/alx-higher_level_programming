@@ -6,5 +6,5 @@
 const str = [];
 exports.logMe = function (item) {
   str.push(item);
-  console.log(str.length + ': ' + str[str.length - 1]);
+  console.log(str.length - 1 + ': ' + str[str.length - 1]);
 };
