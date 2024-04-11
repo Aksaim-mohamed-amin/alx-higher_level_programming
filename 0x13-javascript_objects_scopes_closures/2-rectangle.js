@@ -6,13 +6,12 @@
 class Rectangle {
   /**
    * Create a rectangle with the given width and height.
-   * @param {number} width - The width of the rectangle.
-   * @param {number} height - The height of the rectangle.
+   * @param {number} w - The width of the rectangle.
+   * @param {number} h - The height of the rectangle.
    */
   constructor (w, h) {
-    if (w > 0)
-      this.width = w;
-    if (h > 0)
+    if (isNaN(w) || isNaN(h) || w <= 0 || h <= 0) return {};
+    this.width = w;
     this.height = h;
   }
 }
