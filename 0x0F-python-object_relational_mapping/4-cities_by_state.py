@@ -28,9 +28,9 @@ if __name__ == "__main__":
     ORDER BY cities.id""")
 
     # Retrive the result
-    states = cursor.fetchall()
-    for state in states:
-        print(state)
+    cities = cursor.fetchall()
+    for city in cities:
+        print(city)
 
     # Close connection
     cursor.close()
