@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-""" 
-lists all values in the states table of hbtn_0e_0_usa where name matches the argument.
+"""
+lists all values in the states table of hbtn_0e_0_usa
+where name matches the argument.
 """
 
 import MySQLdb
@@ -25,7 +26,8 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the command in SQL
-    cursor.execute("SELECT * FROM states WHERE name = BINARY '{}' ORDER BY id".format(stateName))
+    cursor.execute("SELECT * FROM states WHERE name = BINARY '{}' ORDER BY id"
+                   .format(stateName))
 
     # Retrive the result
     states = cursor.fetchall()
