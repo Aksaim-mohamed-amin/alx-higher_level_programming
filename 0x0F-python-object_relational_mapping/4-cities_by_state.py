@@ -22,7 +22,10 @@ if __name__ == "__main__":
     cursor = db.cursor()
 
     # Execute the command in SQL
-    cursor.execute("SELECT * FROM cities ORDER BY cities.id")
+    cursor.execute("""SELECT cities.id, cities.name, states.name
+    FROM cities JOIN states
+    ON cities.state_id = states.id
+    ORDER BY cities.id""")
 
     # Retrive the result
     states = cursor.fetchall()
