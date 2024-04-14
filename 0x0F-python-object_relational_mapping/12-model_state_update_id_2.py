@@ -34,6 +34,6 @@ if __name__ == "__main__":
 
     except NoResultFound:
         print("Not Found")
-    
+
     # Close the session
     session.close()
