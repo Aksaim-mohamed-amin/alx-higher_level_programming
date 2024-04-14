@@ -31,7 +31,7 @@ if __name__ == "__main__":
         state = session.query(State).filter(State.name == sys.argv[4]).one()
         print(state.id)
     except NoResultFound:
-        print("Nothing")
+        print("Not found")
 
     # Close the session
     session.close()
