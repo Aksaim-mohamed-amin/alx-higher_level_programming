@@ -16,6 +16,9 @@ if __name__ == "__main__":
                            .format(sys.argv[1], sys.argv[2], sys.argv[3]),
                            pool_pre_ping=True)
 
+    # Create all tables defined by ORM-mapped classes in the database
+    Base.metadata.create_all(engine)
+
     # Create a sessionmaker object
     Session = sessionmaker(bind=engine)
 
@@ -23,7 +26,7 @@ if __name__ == "__main__":
     session = Session()
 
     # Query the first state object
-    state = session.query(State).filter(State.name == sys.argv[4]).first()
+    state = session.query(State).filter(State.name == sys.argv[4]).one()
 
     if state:
         print(state.id)
