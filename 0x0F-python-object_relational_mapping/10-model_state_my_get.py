@@ -28,7 +28,7 @@ if __name__ == "__main__":
     # Query the first state object
     state = session.query(State).filter(State.name == sys.argv[4]).one()
 
-    if state in not None:
+    if state is not None:
         print(state.id)
     else:
         print("Nothing")
