@@ -6,6 +6,7 @@ prints the State id with the name passed as argument from the database
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from sqlalchemy.exc import NoResultFound
 from model_state import Base, State
 
 
@@ -26,11 +27,10 @@ if __name__ == "__main__":
     session = Session()
 
     # Query the first state object
-    state = session.query(State).filter(State.name == sys.argv[4]).one()
-
-    if state is not None:
+    try:
+        state = session.query(State).filter(State.name == sys.argv[4]).one()
         print(state.id)
-    else:
+    except NoResultFound:
         print("Nothing")
 
     # Close the session
