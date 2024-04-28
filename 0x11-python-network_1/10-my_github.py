@@ -16,4 +16,7 @@ if __name__ == "__main__":
     auth = HTTPBasicAuth(username, password)
 
     response = requests.get(url, auth=auth)
-    print(response.json()['id'])
+    if response.status_code == 200:
+        print(response.json()['id'])
+    else:
+        print("None")
