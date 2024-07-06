@@ -1,10 +1,13 @@
-#!/usr/bin/python3
-"""fetches https://intranet.hbtn.io/status."""
+#!/usr/bin/env python3
 import requests
 
+# URL to fetch
+url = 'https://alx-intranet.hbtn.io/status'
 
-if __name__ == "__main__":
-    r = requests.get("https://intranet.hbtn.io/status")
-    print("Body response:")
-    print("\t- type: {}".format(type(r.text)))
-    print("\t- content: {}".format(r.text))
+# Fetch the URL
+response = requests.get(url)
+
+# Display the body response
+print("Body response:")
+print(f"\t- type: {type(response.text)}")
+print(f"\t- content: {response.text}")
