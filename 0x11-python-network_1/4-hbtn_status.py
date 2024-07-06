@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# fetches https://alx-intranet.hbtn.io/status
 import requests
 
 # URL to fetch
