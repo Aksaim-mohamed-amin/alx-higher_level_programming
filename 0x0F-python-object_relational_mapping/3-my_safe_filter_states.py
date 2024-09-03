@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """
-Connect to hbtn_0e_0_usa database and list all states that match the name giving
+Connect to hbtn_0e_0_usa database and list all states
+that match the name giving
 """
 
 import sys
